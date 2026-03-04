@@ -105,10 +105,10 @@
     - Result: ❌ FAILURE - 47 compilation errors (all Lombok-related: missing getters/setters)
     - Notes: Expected failure - establishes baseline for improvement in Step 3
   - **Deferred Work**: Fix Lombok issue in Step 3
-  - **Commit**: Pending
+  - **Commit**: 6961aca - Step 2: Setup Baseline - Verify Current Build with Java 17 - Compile: FAILURE (47 errors), Tests: N/A
 
 - **Step 3: Fix Lombok Configuration**
-  - **Status**: 🔘 Not Started
+  - **Status**: ⏳ In Progress
   - **Changes Made**:
     - To be updated
   - **Review Code Changes**:

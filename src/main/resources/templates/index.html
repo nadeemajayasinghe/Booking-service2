@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Rental - Booking Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .nav-links a {
+            padding: 10px 25px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .welcome-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .welcome-section h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚗 Vehicle Rental System</h1>
+            <p>Booking Service Microservice</p>
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/booking-form">New Booking</a>
+            <a href="/bookings">View Bookings</a>
+        </div>
+
+        <div class="welcome-section">
+            <h2>Welcome to Our Booking Service</h2>
+            <p>
+                Book your perfect vehicle with ease! Our booking service provides a seamless 
+                experience for renting vehicles of all types. Whether you need a car for a business 
+                trip, a family vacation, or just getting around town, we've got you covered.
+            </p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📅 Easy Booking</h3>
+                    <p>Simple and intuitive booking process with real-time availability checking</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💳 Secure Payment</h3>
+                    <p>Safe and secure payment processing for your peace of mind</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚘 Wide Selection</h3>
+                    <p>Choose from a variety of vehicles to match your needs</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⏱️ 24/7 Support</h3>
+                    <p>Round-the-clock customer support for all your queries</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

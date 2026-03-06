@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,15 +16,12 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
         }
 
         .container {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 1400px;
-            margin: 0 auto;
+            width: 100%;
+            min-height: 100vh;
             padding: 40px;
         }
 
@@ -145,7 +143,8 @@
             color: white;
         }
 
-        th, td {
+        th,
+        td {
             padding: 15px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -231,8 +230,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .empty-state {
@@ -297,6 +301,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -387,7 +392,7 @@
 
             try {
                 let url = 'http://localhost:8081/api/bookings';
-                
+
                 const filterEmail = document.getElementById('filterEmail').value;
                 const filterStatus = document.getElementById('filterStatus').value;
 
@@ -405,7 +410,7 @@
                 updateStats(bookings);
             } catch (error) {
                 console.error('Error loading bookings:', error);
-                document.getElementById('bookingsContainer').innerHTML = 
+                document.getElementById('bookingsContainer').innerHTML =
                     '<div class="empty-state"><h3>Error loading bookings</h3><p>Please try again later.</p></div>';
             } finally {
                 document.getElementById('loadingSpinner').style.display = 'none';
@@ -416,7 +421,7 @@
             const container = document.getElementById('bookingsContainer');
 
             if (bookings.length === 0) {
-                container.innerHTML = 
+                container.innerHTML =
                     '<div class="empty-state"><h3>No bookings found</h3><p>Start by creating a new booking!</p></div>';
                 return;
             }
@@ -472,20 +477,20 @@
 
         function updateStats(bookings) {
             document.getElementById('totalBookings').textContent = bookings.length;
-            document.getElementById('pendingBookings').textContent = 
+            document.getElementById('pendingBookings').textContent =
                 bookings.filter(b => b.status === 'PENDING').length;
-            document.getElementById('confirmedBookings').textContent = 
+            document.getElementById('confirmedBookings').textContent =
                 bookings.filter(b => b.status === 'CONFIRMED').length;
-            document.getElementById('completedBookings').textContent = 
+            document.getElementById('completedBookings').textContent =
                 bookings.filter(b => b.status === 'COMPLETED').length;
         }
 
         function formatDate(dateString) {
             const date = new Date(dateString);
-            return date.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'short', 
-                day: 'numeric' 
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
             });
         }
 
@@ -588,7 +593,7 @@
         }
 
         // Close modal when clicking outside
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById('bookingModal');
             if (event.target == modal) {
                 modal.style.display = 'none';
@@ -596,4 +601,5 @@
         }
     </script>
 </body>
+
 </html>
